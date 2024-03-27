@@ -3,6 +3,9 @@ export enum Icons {
     BARBERSHOP = "barbershop",
     FACEBOOK = "facebook",
     INSTAGRAM = "instagram",
-    TRIANGLE = "triangle"
+    TRIANGLE = "triangle",
+    CLOCK = "clock",
+    LOCATION = "location",
+    PHONE = "phone"
 
 }

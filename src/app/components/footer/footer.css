@@ -1,0 +1,94 @@
+footer {
+    background: #17202a;
+    display: flex;
+    color: var(--white-color);
+    justify-content: center;
+    padding-top: 5rem;
+    margin-top: 5rem;
+}
+
+.center-container {
+    max-width: 150rem;
+    width: 100%;
+    padding: 0 5rem 0 5rem;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inner-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.inner-logo mat-icon {
+    width: 5rem;
+    height: 5rem;
+}
+
+
+.footer-text {
+    max-width: 30rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.right-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style-type: none;
+    padding-right: 4rem;
+}
+
+
+
+.right-container ul li a {
+    font-family: "Roboto Medium",sans-serif;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.follow-us {
+    margin-top: 6rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.follow-us .follow-left mat-icon:first-child {
+    color: var(--red-color)
+}
+
+.follow-us .follow-left mat-icon {
+    margin-right: 0.3rem;
+
+    transition: 0.2s ease-in;
+    width: 4rem;
+    height: 4rem;
+    padding: 0.8rem;
+}
+
+.follow-us .follow-left mat-icon:hover {
+    background: var(--white-color);
+    color: #17202a;
+    cursor: pointer;
+    box-shadow: rgba(250, 247, 247, 0.16) 0px 0px 16px;
+}
+
+.follow-right {
+    font-size: 1.5rem;
+    height: 100%;
+    font-family: "Roboto Black", sans-serif;
+}
+
+span {
+    color: var(--red-color);
+}
+
