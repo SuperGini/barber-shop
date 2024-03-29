@@ -1,5 +1,5 @@
 footer {
-    background: #17202a;
+    background:  #0c1015;
     display: flex;
     color: var(--white-color);
     justify-content: center;
@@ -77,7 +77,7 @@ footer {
 
 .follow-us .follow-left mat-icon:hover {
     background: var(--white-color);
-    color: #17202a;
+    color:  var(--black-color);
     cursor: pointer;
     box-shadow: rgba(250, 247, 247, 0.16) 0px 0px 16px;
 }

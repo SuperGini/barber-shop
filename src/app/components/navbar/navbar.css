@@ -1,0 +1,50 @@
+.nav-bar {
+    display: flex;
+    height: 10rem;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+mat-icon {
+    width: 5rem;
+    height: 5rem;
+}
+
+
+ul {
+    display: flex;
+    font-size: 1.6rem;
+    list-style: none;
+    font-weight: 500;
+    gap: 2px;
+}
+
+li {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 1rem 0 1rem;
+}
+
+li:first-child {
+    background: var(--red-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 500;
+}
+
+a:hover {
+    cursor: pointer;
+}
