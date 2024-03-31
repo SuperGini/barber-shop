@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import {Home} from "./components/home/home";
 import {Services} from "./components/services/services";
+import {Photos} from "./components/photos/photos";
 
 export const routes: Routes = [
 
@@ -19,6 +20,11 @@ export const routes: Routes = [
         redirectTo: "home",
         pathMatch: "full"
 
+    },
+    {
+        path: "photos",
+        component: Photos,
+        pathMatch: "full"
     }
 
 

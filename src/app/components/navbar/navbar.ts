@@ -23,6 +23,10 @@ export class Navbar {
         this.router.navigate(['home']);
     }
 
+    navigateToPhotoPage() {
+        this.router.navigate(['photos']);
+    }
+
 
 
 
