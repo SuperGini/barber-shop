@@ -63,3 +63,6 @@ https://medium.com/@infowithkiiru/adding-custom-fonts-to-angular-cc24072d9ed3 ->
     font-weight: 900;
     font-style: normal;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

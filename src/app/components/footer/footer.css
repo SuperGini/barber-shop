@@ -10,6 +10,10 @@ footer {
 .center-container {
     max-width: 150rem;
     width: 100%;
+
+}
+
+.padding-right-left {
     padding: 0 5rem 0 5rem;
 }
 
@@ -43,8 +47,6 @@ footer {
     list-style-type: none;
     padding-right: 4rem;
 }
-
-
 
 .right-container ul li a {
     font-family: "Roboto Medium",sans-serif;
@@ -90,5 +92,29 @@ footer {
 
 span {
     color: var(--red-color);
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 550px) {
+
+    .center-container {
+        flex-direction: column;
+    }
+
+    .padding-right-left {
+        padding: 0 1rem 0 1rem;
+    }
+
+    .logo {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .follow-us {
+        align-items: center;
+    }
 }
 

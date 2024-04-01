@@ -1,5 +1,5 @@
 <footer>
-    <div class="center-container">
+    <div class="center-container padding-right-left">
         <div class="logo">
             <div class="left-container">
                 <div class="inner-logo">
@@ -15,10 +15,9 @@
             </div>
             <div class="right-container">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Photos</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a (click)="navigateToHomePage()">Home</a></li>
+                    <li><a (click)="navigateToServicesPage()">Services</a></li>
+                    <li><a (click)="navigateToPhotoPage()">Photos</a></li>
                 </ul>
             </div>
         </div>

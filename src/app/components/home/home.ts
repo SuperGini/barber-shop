@@ -1,8 +1,10 @@
-import {Component} from "@angular/core";
+import {Component, inject} from "@angular/core";
 import {MatIcon} from "@angular/material/icon";
 import {Location} from "./location/location";
 import {Footer} from "../footer/footer";
 import {Navbar} from "../navbar/navbar";
+import {Router} from "@angular/router";
+import {ViewportScroller} from "@angular/common";
 
 @Component({
     selector: "home-component",
@@ -18,5 +20,16 @@ import {Navbar} from "../navbar/navbar";
 })
 export class Home {
 
+    private router: Router = inject(Router);
+    private viewportScroller = inject(ViewportScroller);
 
+
+    navigateToServicesPage() {
+        this.router.navigate(['services']);
+    }
+
+    scrollToContact() {
+        this.viewportScroller.scrollToAnchor('infox');
+
+    }
 }

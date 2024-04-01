@@ -10,6 +10,6 @@ export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
       provideClientHydration(),
       provideAnimationsAsync(),
-      provideHttpClient(withFetch()), //need this for svg loading
+      provideHttpClient(withFetch()), provideAnimationsAsync(), //need this for svg loading
   ]
 };
