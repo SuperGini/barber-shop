@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
 import {Footer} from "../footer/footer";
-import {Location} from "../home/location/location";
+import {Location} from "../home2/location/location";
 import {MatIcon} from "@angular/material/icon";
 import {Navbar} from "../navbar/navbar";
-import {BarberShopPrices} from "../../utility/barberShopPrices";
+import {BarberShopPrices} from "../../../utility/barberShopPrices";
 
 @Component({
     selector: "services-component",

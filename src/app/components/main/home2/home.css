@@ -1,5 +1,5 @@
 
-.main-container {
+.inner-container {
     width: 100vw;
     height: 100vh;
     background-image: url("/assets/img/main.jpg");
@@ -13,10 +13,9 @@
     align-items: center;
     overflow: hidden;
 
-
 }
 
-.main-container::before {
+.inner-container::before {
     content: "";
     height: 100vh;
     width: 100vw;
@@ -25,29 +24,33 @@
     z-index: 0;
 }
 
+
 /*ATTENTION -> is very important to put position relative so the writing will be in front of before
 z-index
 only works on elements with a position value other than static (e.g., relative, absolute, fixed, sticky).
 */
-.inner-container {
-    position: relative;
-    max-width: 150rem;
-    width: 100%;
-    height: 100%;
+/*.inner-container {*/
+/*    position: relative;*/
+/*    max-width: 150rem;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
 
-}
+/*}*/
+
 
 .center-container {
+    position: relative;
     height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: 1;
+    width: 100%;
 }
 
 .triangles {
     position: relative;
     height: 10rem;
-
     width: 100%;
 }
 .left {
@@ -133,17 +136,19 @@ only works on elements with a position value other than static (e.g., relative, 
         align-self: center;
     }
 
-   .center-text {
-       text-align: center;
-   }
-
-    .space-right-left {
-        padding: 0 1rem 0 1rem;
+    .center-text {
+        text-align: center;
     }
+
+
 
     .btn-container {
         display: flex;
         justify-content: center;
+    }
+
+    .space-right-left {
+        padding: 0 1rem 0 1rem;
     }
 
 

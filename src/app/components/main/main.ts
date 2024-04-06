@@ -1,24 +1,26 @@
 import {Component, inject} from "@angular/core";
+import {Footer} from "./footer/footer";
+import {Location} from "./home2/location/location";
 import {MatIcon} from "@angular/material/icon";
-import {Location} from "./location/location";
-import {Footer} from "../footer/footer";
-import {Navbar} from "../navbar/navbar";
-import {Router} from "@angular/router";
+import {Navbar} from "./navbar/navbar";
+import {Router, RouterOutlet} from "@angular/router";
 import {ViewportScroller} from "@angular/common";
 
+
 @Component({
-    selector: "home-component",
-    templateUrl: "home.html",
-    styleUrl: "home.css",
+    selector: "main-component",
+    templateUrl: "main.html",
+    styleUrl: "main.css",
     imports: [
-        MatIcon,
-        Location,
         Footer,
-        Navbar
+        Location,
+        MatIcon,
+        Navbar,
+        RouterOutlet
     ],
     standalone: true
 })
-export class Home {
+export class Main {
 
     private router: Router = inject(Router);
     private viewportScroller = inject(ViewportScroller);
@@ -32,4 +34,5 @@ export class Home {
         this.viewportScroller.scrollToAnchor('infox');
 
     }
+
 }

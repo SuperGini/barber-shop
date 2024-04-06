@@ -2,7 +2,16 @@
     display: flex;
     height: 10rem;
     justify-content: space-between;
+    position: fixed ;
+    width: 100%;
+    top: 0;
+    z-index: 100;
 }
+
+.xxx {
+    background: var(--black-color);
+}
+
 
 .logo {
     display: flex;
@@ -12,11 +21,16 @@
 .logo h1 {
     font-size: 2rem;
     margin-left: 1rem;
+    color: var(--white-color);
 }
 
 mat-icon {
     width: 5rem;
     height: 5rem;
+}
+
+.space-right-left {
+    padding: 0 5rem 0 5rem;
 }
 
 
@@ -48,9 +62,6 @@ a {
 a:hover {
     cursor: pointer;
 }
-
-
-
 
 
 .container {
@@ -153,5 +164,9 @@ path:nth-child(6) {
 
     .logo {
         padding-left: 1rem;
+    }
+
+    .space-right-left {
+        padding: 0 1rem 0 1rem !important;
     }
 }

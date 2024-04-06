@@ -1,17 +1,11 @@
-<div class="main-container">
-    <div class="x">
-        <div class="y">
-            <navbar-component></navbar-component>
-        </div>
-    </div>
+<!--<div class="component-container">-->
     <div class="inner-container">
         <div class="services">
-
             @for (service of services; track service.price) {
                 <div class="box-price">
                     <div class="text">
-                        <h3>{{service.service}}</h3>
-                        <p>{{service.price}}</p>
+                        <h3>{{ service.service }}</h3>
+                        <p>{{ service.price }}</p>
                     </div>
                     <div class="price"></div>
                 </div>
@@ -19,5 +13,6 @@
         </div>
 
     </div>
-</div>
-<footer-component></footer-component>
+<!--</div>-->
+
+
