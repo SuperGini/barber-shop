@@ -1,13 +1,14 @@
 import {Component, inject} from "@angular/core";
 import {MatIcon} from "@angular/material/icon";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
     selector: "footer-component",
     templateUrl: "./footer.html",
     styleUrl: "./footer.css",
     imports: [
-        MatIcon
+        MatIcon,
+        RouterLink
     ],
     standalone: true
 })

@@ -4,9 +4,9 @@
         <h1>GiniBarber</h1>
     </div>
     <ul>
-        <li [ngClass]="{'active-color-page' : activePage() === 'home'}"><a (click)="navigateToHomePage()" class="homex" >Home</a></li>
-        <li [ngClass]="{'active-color-page' : activePage() === 'services'}"><a (click)="navigateToServicesPage()" class="servicex" >Services</a></li>
-        <li [ngClass]="{'active-color-page' : activePage() === 'photos'}"><a (click)="navigateToPhotoPage()" class="photosx" >Photos</a></li>
+        <li [ngClass]="{'active-color-page' : activePage() === 'home'}"><a [routerLink]="['/home']" class="homex" >Home</a></li>
+        <li [ngClass]="{'active-color-page' : activePage() === 'services'}"><a [routerLink]="['/services']" class="servicex" >Services</a></li>
+        <li [ngClass]="{'active-color-page' : activePage() === 'photos'}"><a [routerLink]="['/photos']" class="photosx" >Photos</a></li>
         <li>
             <button class="hamburger" [matMenuTriggerFor]="menu">
                 <div [ngClass]="{'active' : activeX()}">

@@ -5,6 +5,7 @@ import {SvgService} from "./services/svg.service";
 import {activePage} from "./caching/caching";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {tap} from "rxjs";
+import {Meta} from "@angular/platform-browser";
 
 @Component({
     selector: 'app-root',
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit {
    // https://stackoverflow.com/questions/76264067/takeuntildestroyed-can-only-be-used-within-an-injection-context
     //https://github.com/ueler/angular-rxjs-unsubscribe
     private events = this.router.events.pipe(takeUntilDestroyed()); //this will automatically destroy the observer aht the en
+    private meta: Meta = inject(Meta);
 
     ngOnInit(): void {
         this.svgService.registerIcons();
@@ -33,6 +35,10 @@ export class AppComponent implements OnInit {
                 })
             )
             .subscribe();
+
+        this.meta.addTags([
+            {name: "description", content: "GiniBarber barbershop, cel mai bun barbershop din Pantelimon"}
+        ]);
     }
 
 }

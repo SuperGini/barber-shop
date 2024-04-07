@@ -1,6 +1,6 @@
 import {Component, HostListener, inject, OnInit} from "@angular/core";
 import {MatIcon} from "@angular/material/icon";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {DOCUMENT, NgClass} from "@angular/common";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {MatButton} from "@angular/material/button";
@@ -17,6 +17,7 @@ import {activePage, activeX} from "../../../caching/caching";
         MatMenuTrigger,
         MatMenuItem,
         MatButton,
+        RouterLink,
 
     ],
     standalone: true

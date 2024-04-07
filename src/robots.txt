@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin  # Block access to the admin directory (optional)
+
+# Allow crawling of all public content
+Allow: /
+Allow: /home
+Allow: /services
+Allow: /photos
