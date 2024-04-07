@@ -9,7 +9,7 @@ export const routes: Routes = [
 
     {
         path: "",
-        redirectTo: "homex",
+        redirectTo: "home",
         pathMatch: "full"
 
     },
@@ -19,7 +19,7 @@ export const routes: Routes = [
         component: Main,
         children: [
             {
-                path: "homex",
+                path: "home",
                 component: Home,
                 pathMatch: "full"
 

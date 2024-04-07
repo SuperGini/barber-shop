@@ -26,7 +26,5 @@ export class Home {
 
     scrollToContact() {
         this.viewportScroller.scrollToAnchor('infox');
-
     }
-
 }

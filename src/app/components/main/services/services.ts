@@ -1,9 +1,10 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, inject, OnDestroy, OnInit} from "@angular/core";
 import {Footer} from "../footer/footer";
 import {Location} from "../home2/location/location";
 import {MatIcon} from "@angular/material/icon";
 import {Navbar} from "../navbar/navbar";
 import {BarberShopPrices} from "../../../utility/barberShopPrices";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
     selector: "services-component",
@@ -17,13 +18,21 @@ import {BarberShopPrices} from "../../../utility/barberShopPrices";
     ],
     standalone: true
 })
-export class Services implements OnInit{
+export class Services implements OnInit, OnDestroy{
 
     services: BarberShopPrices[] = [];
+
+    private document = inject(DOCUMENT);
+    private navBar = this.document.querySelector(".nav-bar") as Element;
 
 
     ngOnInit(): void {
         this.loadPrices();
+        this.navBar.classList.add("xxx");
+    }
+
+    ngOnDestroy(): void {
+        this.navBar.classList.remove("xxx");
     }
 
     loadPrices() {
@@ -34,6 +43,8 @@ export class Services implements OnInit{
         this.services.push(haircutBeardStyling);
         this.services.push(dyesHearBeard);
     }
+
+
 
 }
 

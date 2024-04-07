@@ -1,9 +1,10 @@
-import {Component, HostListener, inject, OnInit, PLATFORM_ID, signal} from "@angular/core";
+import {Component, HostListener, inject, OnInit} from "@angular/core";
 import {MatIcon} from "@angular/material/icon";
 import {Router} from "@angular/router";
-import {DOCUMENT, isPlatformBrowser, NgClass} from "@angular/common";
+import {DOCUMENT, NgClass} from "@angular/common";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {MatButton} from "@angular/material/button";
+import {activePage, activeX} from "../../../caching/caching";
 
 @Component({
     selector: "navbar-component",
@@ -20,37 +21,40 @@ import {MatButton} from "@angular/material/button";
     ],
     standalone: true
 })
-export class Navbar implements OnInit {
+export class Navbar {
 
-    private router;
+    private router: Router = inject(Router);
     private document = inject(DOCUMENT);
 
-    private platformId = inject(PLATFORM_ID);
-
-    activePage = signal<string>('');
-    activeX = signal<boolean>(false);
-
-    header = this.document.querySelector(".inner-container") as Element;
+    protected readonly activeX = activeX;
+    protected readonly activePage = activePage;
 
 
-    constructor(router: Router) {
-        this.router = router;
-    }
-
-    ngOnInit(): void {
-        this.getActivePage();
-        this.doShit();
-    }
+    private isSticky: boolean = false;
+    private navBar = this.document.querySelector(".nav-bar") as Element;
 
     // https://stackoverflow.com/questions/40107008/detect-click-outside-angular-component
     @HostListener('document:click', ['$event'])
     toogleHamburger(event: { target: HTMLElement; }) {
         if (event.target.classList.contains('container')) {
-            this.activeX.set(true);
+            activeX.set(true);
             return;
         }
 
-        this.activeX.set(false);
+        activeX.set(false);
+    }
+
+    @HostListener('window:scroll', ['$event'])
+    checkScroll() {
+        this.isSticky = window.scrollY > 0;
+
+        if (this.isSticky && !this.navBar.classList.contains("xxx")) {
+            this.navBar.classList.add("xxx");
+        }
+
+        if (window.scrollY === 0 && this.router.url === "/home") {
+            this.navBar.classList.remove("xxx");
+        }
     }
 
     navigateToServicesPage() {
@@ -58,64 +62,11 @@ export class Navbar implements OnInit {
     }
 
     navigateToHomePage() {
-        this.router.navigate(['homex']);
+        this.router.navigate(['home']);
     }
 
     navigateToPhotoPage() {
         this.router.navigate(['photos']);
     }
 
-    getActivePage() {
-        const activePath = this.router.url.replace('/', '');
-        switch (activePath) {
-            case 'home':
-                this.activePage.set('home');
-                break;
-            case 'services':
-                this.activePage.set('services');
-                break;
-            case 'photos':
-                this.activePage.set('photos');
-                break;
-        }
-    }
-
-
-    doShit() {
-        console.log("xxxxxxxxxx");
-        const sectionOneOptions = {
-            rootMargin: "-100% 0% 0% 0%",
-        };
-
-        if (isPlatformBrowser(this.platformId)) {
-
-            let url = this.router.url;
-            const navBar = this.document.querySelector(".nav-bar") as Element;
-            const sectionOneObserver = new IntersectionObserver(function (entries) {
-                entries.forEach((entry) => {
-                    console.log(entry.target);
-                    console.log(url);
-                    if (entry.isIntersecting) {
-                        navBar.classList.remove("xxx");
-                    }
-
-                    if (!entry.isIntersecting) {
-                        navBar.classList.add("xxx");
-                    }
-                });
-            }, sectionOneOptions);
-
-            return sectionOneObserver.observe(this.header);
-
-        }
-
-    }
-
 }
-
-
-
-
-
-
-

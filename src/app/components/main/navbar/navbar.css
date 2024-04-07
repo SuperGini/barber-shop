@@ -127,11 +127,9 @@ path:nth-child(6) {
 
 ::ng-deep .customize-menu {
     background: transparent !important;
-    /*width: 10rem !important;*/
 }
 
 .btn {
-
     background: var(--red-color);
     color: white;
     width: 25rem;
