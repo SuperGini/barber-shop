@@ -21,18 +21,21 @@ export const routes: Routes = [
             {
                 path: "home",
                 component: Home,
-                pathMatch: "full"
+                pathMatch: "full",
+                title: 'GiniBarber BarberShop'
 
             },
             {
                 path: "services",
                 component: Services,
-                pathMatch: "full"
+                pathMatch: "full",
+                title: 'GiniBarber Prices'
             },
             {
                 path: "photos",
                 component: Photos,
-                pathMatch: "full"
+                pathMatch: "full",
+                title: "GiniBarber Photos"
             }
 
         ]

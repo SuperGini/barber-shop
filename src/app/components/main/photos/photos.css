@@ -1,8 +1,11 @@
+.component-container {
+    display: flex;
+    justify-content: center;
+}
+
 .inner-container {
     max-width: 150rem;
     width: 100%;
-    /*height: 100%;*/
-    height: 100%;
     display: flex;
     justify-content: center;
     padding-top: 10rem;
